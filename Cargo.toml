@@ -1,8 +1,9 @@
 [package]
-name = "life"
+name = "gofish"
 version = "0.1.0"
 authors = ["Edvin Hultberg <hultberg@mittnett.net>"]
 edition = "2018"
 
 [dependencies]
 rand = "0.6.0"
+termion = "1"
