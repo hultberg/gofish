@@ -238,7 +238,7 @@ fn determine_winner<'a>(standings: &'a Vec<&Player>) -> Option<&'a Player> {
 }
 
 fn gameover(winner: &Player) {
-    println!("{}{} has won with {} books", termion::clear::All, winner.name, winner.books.len());
+    println!("{}{}{} has won with {} books", termion::clear::All, termion::cursor::Goto(1, 1), winner.name, winner.books.len());
 }
 
 fn turn(
