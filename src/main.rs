@@ -175,7 +175,7 @@ fn main() {
             break;
         }
 
-        println!("{}{}Go Fish v0.3.0",
+        println!("{}{}Go Fish v0.3.1",
             termion::clear::All,
             termion::cursor::Goto(1, 1));
 
