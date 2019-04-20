@@ -238,6 +238,19 @@ fn turn(
         return (current_player, current_opponent);
     }
     
+    let mut has_card: bool = false;
+    for &player_card in current_player.cards.iter() {
+        if player_card.number == card_face_value {
+            has_card = true;
+            break;
+        }
+    }
+    
+    if !has_card && !current_player.is_cpu {
+        current_status_lines.push(String::from("You dont have that card"));
+        return (current_player, current_opponent);
+    }
+    
     let mut found_cards: Vec<Card> = vec![];
     
     for &other_player_card in current_opponent.cards.iter() {
