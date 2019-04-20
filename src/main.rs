@@ -213,8 +213,7 @@ fn determine_winner<'a>(standings: &'a Vec<(&String, usize)>) -> Option<&'a Stri
 }
 
 fn gameover(winner: &String) {
-    println!("{}", termion::clear::All);
-    println!("{} has won", winner);
+    println!("{}{} has won", termion::clear::All, winner);
 }
 
 fn turn(
