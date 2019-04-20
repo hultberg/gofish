@@ -151,9 +151,6 @@ fn main() {
         temp_string.trim().to_string()
     };
 
-    // clear again for our main output.
-    println!("{}", termion::clear::All);
-
     // Create player instances.
     let mut player = Player::new(&player_name);
     let mut opponent = Player::new_cpu();
@@ -168,10 +165,6 @@ fn main() {
         check_cards_for_books(&mut game_log, &mut player);
         check_cards_for_books(&mut game_log, &mut opponent);
 
-        println!("{}{}Go Fish v0.3.0",
-            termion::clear::All,
-            termion::cursor::Goto(1, 1));
-
         let mut game_standings: Vec<&Player> = vec![&player, &opponent];
         game_standings.sort_by(|a, b| {
             return a.books.len().cmp(&b.books.len()).reverse().then_with(|| a.name.cmp(&b.name));
@@ -181,6 +174,10 @@ fn main() {
             gameover(&winner);
             break;
         }
+
+        println!("{}{}Go Fish v0.3.0",
+            termion::clear::All,
+            termion::cursor::Goto(1, 1));
 
         println!("{}{} cards in deck", termion::cursor::Goto(1, 2), deck.len());
 
