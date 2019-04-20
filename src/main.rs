@@ -278,8 +278,9 @@ fn turn(
         return (current_opponent, current_player);
     }
     
-    current_status_lines.push(String::from("Go Fish"));
     give_random_card(&mut deck, &mut current_player, 1);
+    let first_card = current_player.cards.last().unwrap();
+    current_status_lines.push(String::from(format!("Go Fish, you got {} from the deck", first_card.get_label())));
     
     return (current_opponent, current_player);
 }
