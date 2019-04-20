@@ -14,4 +14,4 @@ You enter the card value you wish to request from the computer player. If the co
 
 ## License
 
-The Unlicense, see (LICENSE)[LICENSE]
+The Unlicense, see [LICENSE](LICENSE)
