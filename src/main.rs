@@ -136,7 +136,7 @@ fn main() {
         check_cards_for_books(&mut current_status_lines, &mut player);
         check_cards_for_books(&mut current_status_lines, &mut opponent);
         
-        println!("{}{}Go Fish v0.1.0",
+        println!("{}{}Go Fish v0.2.0",
             termion::clear::All,
             termion::cursor::Goto(1, 1));
             
